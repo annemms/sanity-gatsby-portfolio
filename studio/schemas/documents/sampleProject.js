@@ -2,7 +2,7 @@ import {format} from 'date-fns'
 
 export default {
   name: 'sampleProject',
-  title: 'Sample project',
+  title: 'Malerier',
   type: 'document',
   fields: [
     {
@@ -22,30 +22,18 @@ export default {
     },
     {
       name: 'publishedAt',
-      title: 'Published at',
-      description: 'You can use this field to schedule projects where you show them',
+      title: 'Produksjonsdato',
       type: 'datetime'
     },
     {
-      name: 'excerpt',
-      title: 'Excerpt',
-      type: 'simplePortableText'
+      name: 'price',
+      title: 'Pris',
+      type: 'string'
     },
     {
-      name: 'members',
-      title: 'Members',
-      type: 'array',
-      of: [{type: 'projectMember'}]
-    },
-    {
-      name: 'startedAt',
-      title: 'Started at',
-      type: 'datetime'
-    },
-    {
-      name: 'endedAt',
-      title: 'Ended at',
-      type: 'datetime'
+      name: 'format',
+      title: 'Format',
+      type: 'string'
     },
     {
       name: 'mainImage',
@@ -53,19 +41,18 @@ export default {
       type: 'figure'
     },
     {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}]
-    },
-    {
       name: 'body',
-      title: 'Body',
+      title: 'Beskrivelse',
       type: 'projectPortableText'
     },
     {
+      name: 'isSold',
+      title: 'Solgt',
+      type: 'boolean'
+    },
+    {
       name: 'relatedProjects',
-      title: 'Related projects',
+      title: 'Related malerier',
       type: 'array',
       of: [{type: 'reference', to: {type: 'sampleProject'}}]
     }
@@ -77,7 +64,7 @@ export default {
       slug: 'slug',
       media: 'mainImage'
     },
-    prepare({title = 'No title', publishedAt, slug = {}, media}) {
+    prepare ({title = 'No title', publishedAt, slug = {}, media}) {
       const dateSegment = format(publishedAt, 'YYYY/MM')
       const path = `/${dateSegment}/${slug.current}/`
       return {
