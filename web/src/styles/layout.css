@@ -1,9 +1,16 @@
-@import './custom-properties.css';
-
+@import "./custom-properties.css";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap");
 html {
-  font-family: var(--font-family-sans);
+  font-family: "Raleway", sans-serif;
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Merriweather", serif;
 }
 
 body {
@@ -11,11 +18,4 @@ body {
   background: var(--color-white);
   color: var(--color-black);
   margin: 0;
-}
-
-html,
-body,
-body > div,
-body > div > div {
-  height: 100%;
 }
