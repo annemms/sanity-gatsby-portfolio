@@ -10,7 +10,7 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import ProjectPreviewGrid from "../components/project-preview-grid";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import coverphoto from "../components/static/mari.png";
+import coverphoto from "../components/static/coverphoto.jpg";
 import styled from "styled-components";
 import ContactForm from "../components/contact-form";
 
@@ -63,10 +63,58 @@ export const query = graphql`
 `;
 
 const ImageWrapper = styled.div`
+  position: relative;
   img {
     width: 100%;
     max-height: 900px;
     object-fit: cover;
+    opacity: 0.5;
+  }
+  h2 {
+    color: #506473;
+    position: absolute;
+    top: 30%;
+    right: 0;
+    left: 0;
+    text-align: center;
+    font-size: 100px;
+    span {
+      font-weight: 300;
+    }
+  }
+  .line {
+    height: 2px;
+    background: #506473;
+    width: 40%;
+    position: absolute;
+    top: 56%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+
+  button {
+    border: 4px solid #506473;
+    border-radius: 40px;
+    width: 200px;
+    font-size: 28px;
+    margin: 20px auto;
+    padding: 8px 10px;
+    background: none;
+    color: #506473;
+    display: block;
+    position: absolute;
+    top: 60%;
+    :hover {
+      background: #506473;
+      color: #fff;
+    }
+  }
+  .omMeg {
+    right: 36%;
+  }
+  .galleri {
+    right: 52%;
   }
 `;
 
@@ -99,6 +147,12 @@ const IndexPage = props => {
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <ImageWrapper>
         <img src={coverphoto} alt="coverphoto" />
+        <h2>
+          <span>Art by </span> Mari
+        </h2>
+        <div className="line"></div>
+        <button className="galleri">Se galleri</button>
+        <button className="omMeg">Om meg</button>
       </ImageWrapper>
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>

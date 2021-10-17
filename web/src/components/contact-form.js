@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const FormWrapper = styled.div`
-  background: #3a3a3bc9;
+  background: #7990a1;
   padding: 2em;
   margin: 0 auto;
 `;

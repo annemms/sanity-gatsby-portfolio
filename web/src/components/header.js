@@ -32,7 +32,7 @@ const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  background: #3a3a3b;
+  background: #506473;
 
   @media (--media-min-small) {
     padding: 1.5em 1.5em;
@@ -102,6 +102,7 @@ const Header = () => (
           <li style={{ marginRight: "20px" }}>
             <Link to="/aboutme">OM MEG</Link>
           </li>
+
           <li>
             <Link to="/archive/">GALLERI</Link>
           </li>

@@ -1,9 +1,20 @@
 import React from "react";
+import styled from "styled-components";
 
-import * as styles from "./container.module.css";
+const Wrapper = styled.div`
+  .root {
+    box-sizing: border-box;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    @media (--media-min-small) {
+      padding: 2em;
+    }
+  }
+`;
 
 const Container = ({ children }) => {
-  return <div className={styles.root}>{children}</div>;
+  return <Wrapper>{children}</Wrapper>;
 };
 
 export default Container;
