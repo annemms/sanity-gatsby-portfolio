@@ -26,7 +26,7 @@ export const query = graphql`
             alt
           }
           title
-          _rawExcerpt
+          price
           slug {
             current
           }

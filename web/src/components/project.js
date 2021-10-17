@@ -4,13 +4,15 @@ import { Link } from "gatsby";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import BlockContent from "./block-content";
-import Container from "./container";
-import RoleList from "./role-list";
+import styled from "styled-components";
 
 import * as styles from "./project.module.css";
 
+const Wrapper = styled.div`
+  margin: 2rem 4rem;
+`;
 function Project(props) {
-  const { _rawBody, title, categories, mainImage, members, publishedAt, relatedProjects } = props;
+  const { _rawBody, title, mainImage, price, isSold, publishedAt, relatedProjects } = props;
   return (
     <article className={styles.root}>
       {props.mainImage && mainImage.asset && (
@@ -25,7 +27,7 @@ function Project(props) {
           />
         </div>
       )}
-      <Container>
+      <Wrapper>
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{title}</h1>
@@ -39,20 +41,10 @@ function Project(props) {
                   : format(new Date(publishedAt), "MMMM Do YYYY")}
               </div>
             )}
-            {members && members.length > 0 && <RoleList items={members} title="Project members" />}
-            {categories && categories.length > 0 && (
-              <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Categories</h3>
-                <ul>
-                  {categories.map(category => (
-                    <li key={category._id}>{category.title}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
+
             {relatedProjects && relatedProjects.length > 0 && (
               <div className={styles.relatedProjects}>
-                <h3 className={styles.relatedProjectsHeadline}>Related projects</h3>
+                <h3 className={styles.relatedProjectsHeadline}>Kanskje du også liker</h3>
                 <ul>
                   {relatedProjects.map(project => (
                     <li key={`related_${project._id}`}>
@@ -66,9 +58,10 @@ function Project(props) {
                 </ul>
               </div>
             )}
+            <p>{price}</p>
           </aside>
         </div>
-      </Container>
+      </Wrapper>
     </article>
   );
 }

@@ -41,7 +41,8 @@ const Price = styled.div`
   margin: 0 auto;
   padding: 8px 10px;
   margin-bottom: 32px;
-  p {
+
+  h3 {
     margin: 0;
     font-size: 20px;
     color: #fff;
@@ -49,6 +50,12 @@ const Price = styled.div`
   }
   strong {
     font-weight: 600;
+  }
+  :hover {
+    background: #fff;
+    h3 {
+      color: #506473;
+    }
   }
 `;
 
@@ -77,9 +84,9 @@ function ProjectPreview(props) {
 
       <TextWrapper>
         <h3 className="title">{props.title}</h3>
-        {props._rawExcerpt && (
+        {props.price && (
           <Price>
-            <BlockText blocks={props._rawExcerpt} />
+            <h3>{props.price}</h3>
           </Price>
         )}
       </TextWrapper>
