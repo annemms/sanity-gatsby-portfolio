@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import HamburgerIcon from "./icon/hamburger";
 
@@ -69,10 +69,19 @@ const StyledNav = styled.nav`
       font-weight: 600;
     }
   }
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
+const BurgerMenu = styled.div`
+  display: none;
+  @media (max-width: 600px) {
+    display: block;
+  }
 `;
 
 const Header = () => {
-  let mobileView = window.matchMedia("(max-width: 600px)");
   return (
     <Wrapper>
       <Content>
@@ -83,21 +92,20 @@ const Header = () => {
             </h1>
           </Link>
         </div>
-        {mobileView.matches ? (
+        <BurgerMenu>
           <HamburgerIcon />
-        ) : (
-          <StyledNav>
-            <ul>
-              <li style={{ marginRight: "20px" }}>
-                <Link to="/aboutme">OM MEG</Link>
-              </li>
+        </BurgerMenu>
+        <StyledNav>
+          <ul>
+            <li style={{ marginRight: "20px" }}>
+              <Link to="/aboutme">OM MEG</Link>
+            </li>
 
-              <li>
-                <Link to="/archive/">GALLERI</Link>
-              </li>
-            </ul>
-          </StyledNav>
-        )}
+            <li>
+              <Link to="/archive/">GALLERI</Link>
+            </li>
+          </ul>
+        </StyledNav>
       </Content>
     </Wrapper>
   );
