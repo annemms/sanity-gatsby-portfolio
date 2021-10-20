@@ -96,7 +96,7 @@ const ImageWrapper = styled.div`
     margin: 0 auto;
 
     @media (max-width: 600px) {
-      top: 60%;
+      top: 59%;
     }
   }
 `;
