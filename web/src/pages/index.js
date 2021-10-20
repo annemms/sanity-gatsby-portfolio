@@ -94,6 +94,10 @@ const ImageWrapper = styled.div`
     right: 0;
     left: 0;
     margin: 0 auto;
+
+    @media (max-width: 600px) {
+      top: 60%;
+    }
   }
 `;
 
@@ -105,6 +109,11 @@ const ButtonWrapper = styled.div`
   max-width: 655px;
   right: 0;
   margin: 0 auto;
+
+  @media (max-width: 600px) {
+    top: unset;
+  }
+
   button {
     border: 4px solid #506473;
     border-radius: 40px;
@@ -163,7 +172,6 @@ const IndexPage = props => {
         </h2>
         <div className="line"></div>
         <ButtonWrapper>
-          {" "}
           <button className="galleri">GALLERI</button>
           <button className="omMeg">OM MEG</button>
         </ButtonWrapper>
