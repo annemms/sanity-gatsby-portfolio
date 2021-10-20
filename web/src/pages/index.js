@@ -81,6 +81,9 @@ const ImageWrapper = styled.div`
     span {
       font-weight: 300;
     }
+    @media (max-width: 600px) {
+      font-size: 32px;
+    }
   }
   .line {
     height: 2px;
@@ -92,29 +95,37 @@ const ImageWrapper = styled.div`
     left: 0;
     margin: 0 auto;
   }
+`;
 
+const ButtonWrapper = styled.div`
+  position: absolute;
+  top: 60%;
+  display: flex;
+  left: 0;
+  max-width: 655px;
+  right: 0;
+  margin: 0 auto;
   button {
     border: 4px solid #506473;
     border-radius: 40px;
-    width: 200px;
+    width: 220px;
     font-size: 28px;
     margin: 20px auto;
     padding: 8px 10px;
     background: none;
     color: #506473;
     display: block;
-    position: absolute;
-    top: 60%;
+
+    @media (max-width: 600px) {
+      border: 2px solid #506473;
+      font-size: 18px;
+      width: 150px;
+    }
+
     :hover {
       background: #506473;
       color: #fff;
     }
-  }
-  .omMeg {
-    right: 36%;
-  }
-  .galleri {
-    right: 52%;
   }
 `;
 
@@ -151,8 +162,11 @@ const IndexPage = props => {
           <span>Art by </span> Mari
         </h2>
         <div className="line"></div>
-        <button className="galleri">Se galleri</button>
-        <button className="omMeg">Om meg</button>
+        <ButtonWrapper>
+          {" "}
+          <button className="galleri">GALLERI</button>
+          <button className="omMeg">OM MEG</button>
+        </ButtonWrapper>
       </ImageWrapper>
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>

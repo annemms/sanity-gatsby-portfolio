@@ -23,7 +23,7 @@ const LeadMediaThumb = styled.div`
   position: relative;
   padding-bottom: 66.666%;
   background: #eee;
-  height: 300px;
+  height: 500px;
   img {
     position: absolute;
     top: 0;

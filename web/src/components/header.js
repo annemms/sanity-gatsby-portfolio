@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
+import HamburgerIcon from "./icon/hamburger";
 
 const Wrapper = styled.div`
   position: relative;
@@ -34,38 +35,21 @@ const Content = styled.div`
   align-items: baseline;
   background: #506473;
 
-  @media (--media-min-small) {
-    padding: 1.5em 1.5em;
+  svg {
+    width: 40px;
+    height: 40px;
+    path {
+      stroke: white;
+    }
   }
 
   .branding {
     font-weight: 600;
-
-    @media (--media-max-small) {
-      img {
-        max-width: 300px;
-      }
-    }
   }
 
-  .toggleNavButton {
-    appearance: none;
-    font-size: 25px;
-    border: none;
-    background: none;
-    margin: 0;
-    padding: calc(14 / 17 / 2 * 1rem);
-    outline: none;
-    color: inherit;
-
-    & svg {
-      display: block;
-      fill: inherit;
-    }
-
-    @media (--media-min-small) {
-      display: none;
-    }
+  @media (max-width: 600px) {
+    align-items: flex-end;
+    padding: 1em;
   }
 `;
 
@@ -87,29 +71,36 @@ const StyledNav = styled.nav`
   }
 `;
 
-const Header = () => (
-  <Wrapper>
-    <Content>
-      <div className="branding">
-        <Link to="/">
-          <h1>
-            <span>Art by </span> Mari
-          </h1>
-        </Link>
-      </div>
-      <StyledNav>
-        <ul>
-          <li style={{ marginRight: "20px" }}>
-            <Link to="/aboutme">OM MEG</Link>
-          </li>
+const Header = () => {
+  let mobileView = window.matchMedia("(max-width: 600px)");
+  return (
+    <Wrapper>
+      <Content>
+        <div className="branding">
+          <Link to="/">
+            <h1>
+              <span>Art by </span> Mari
+            </h1>
+          </Link>
+        </div>
+        {mobileView.matches ? (
+          <HamburgerIcon />
+        ) : (
+          <StyledNav>
+            <ul>
+              <li style={{ marginRight: "20px" }}>
+                <Link to="/aboutme">OM MEG</Link>
+              </li>
 
-          <li>
-            <Link to="/archive/">GALLERI</Link>
-          </li>
-        </ul>
-      </StyledNav>
-    </Content>
-  </Wrapper>
-);
+              <li>
+                <Link to="/archive/">GALLERI</Link>
+              </li>
+            </ul>
+          </StyledNav>
+        )}
+      </Content>
+    </Wrapper>
+  );
+};
 
 export default Header;

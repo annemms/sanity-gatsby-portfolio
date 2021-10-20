@@ -5,6 +5,12 @@
   margin: 2em 4em;
 }
 
+@media (max-width: 600px) {
+  .root {
+    margin: 1em;
+  }
+}
+
 .headline {
   font-size: 32px;
   text-align: center;

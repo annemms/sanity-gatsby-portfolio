@@ -23,6 +23,8 @@ const Form = styled.form`
     outline: none;
     font-weight: 400;
     font-size: 20px;
+    min-width: 100%;
+    max-width: 100%;
   }
   textarea {
     width: 100%;
