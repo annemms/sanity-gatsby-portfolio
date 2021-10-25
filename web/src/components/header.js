@@ -1,112 +1,177 @@
 import { Link } from "gatsby";
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import HamburgerIcon from "./icon/hamburger";
 
 const Wrapper = styled.div`
-  position: relative;
-  z-index: 100;
+  margin: 0;
+  background-color: #f4f4f4;
 
-  .branding {
-    h1 {
-      margin-bottom: 0;
-    }
-    a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 700;
-    }
-    span {
-      font-weight: 300;
-    }
+  a {
+    color: #fff;
   }
 
-  img {
+  /* header */
+
+  .header {
+    background-color: #506473;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #506473;
+  }
+
+  .header li a {
+    display: block;
+    padding: 33px 30px;
+    text-decoration: none;
+  }
+
+  .header li a:hover,
+  .header .menu-btn:hover {
+    font-weight: bold;
+  }
+
+  .header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+
+  /* menu */
+
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }
+
+  /* menu icon */
+
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+
+  .header .menu-icon .navicon {
+    background: #fff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+  }
+
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
     width: 100%;
   }
-`;
 
-const Content = styled.div`
-  box-sizing: border-box;
-  padding: 0 25px;
-  padding: 1em 2em;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  background: #506473;
-
-  svg {
-    width: 40px;
-    height: 40px;
-    path {
-      stroke: white;
-    }
+  .header .menu-icon .navicon:before {
+    top: 5px;
   }
 
-  .branding {
-    font-weight: 600;
+  .header .menu-icon .navicon:after {
+    top: -5px;
   }
 
-  @media (max-width: 600px) {
-    align-items: flex-end;
-    padding: 1em;
-  }
-`;
+  /* menu btn */
 
-const StyledNav = styled.nav`
-  ul {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-
-    a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 400;
-      font-size: 20px;
-    }
-    a:hover {
-      font-weight: 600;
-    }
-  }
-  @media (max-width: 600px) {
+  .header .menu-btn {
     display: none;
   }
-`;
 
-const BurgerMenu = styled.div`
-  display: none;
-  @media (max-width: 600px) {
-    display: block;
+  .header .menu-btn:checked ~ .menu {
+    max-height: 260px;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+
+  /* 48em = 768px */
+
+  @media (min-width: 48em) {
+    .header h1 {
+      font-size: 26px;
+    }
+
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 33px 30px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
   }
 `;
 
 const Header = () => {
   return (
     <Wrapper>
-      <Content>
-        <div className="branding">
-          <Link to="/">
-            <h1>
-              <span>Art by </span> Mari
-            </h1>
-          </Link>
-        </div>
-        <BurgerMenu>
-          <HamburgerIcon />
-        </BurgerMenu>
-        <StyledNav>
-          <ul>
-            <li style={{ marginRight: "20px" }}>
-              <Link to="/aboutme">OM MEG</Link>
-            </li>
-
-            <li>
-              <Link to="/archive/">GALLERI</Link>
-            </li>
-          </ul>
-        </StyledNav>
-      </Content>
+      <header class="header">
+        <a href="/" class="logo">
+          <h1>Art by Mari</h1>
+        </a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn">
+          <span class="navicon"></span>
+        </label>
+        <ul class="menu">
+          <li>
+            <a href="mari-ringsaker">Om meg</a>
+          </li>
+          <li>
+            <a href="/galleri">Galleri</a>
+          </li>
+          <li>
+            <a href="#contact">Kontakt</a>
+          </li>
+        </ul>
+      </header>
     </Wrapper>
   );
 };

@@ -17,8 +17,21 @@ const Wrapper = styled.div`
 
   .footer {
     a {
-      color: inherit;
+      color: #fff;
       text-decoration: none;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        :hover {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .menu {
+      margin: 0;
+      padding-bottom: 40px;
     }
   }
 
@@ -33,16 +46,13 @@ const Wrapper = styled.div`
   }
 
   .companyAddress {
-    text-align: center;
     margin: 0 0 1rem;
   }
 
   .siteInfo {
-    padding: 40px;
-    text-align: center;
+    padding: 40px 40px 12px;
     color: white;
-    font-size: var(--font-small-size);
-    line-height: var(--font-small-line-height);
+    font-size: 20px;
   }
 `;
 
@@ -53,7 +63,18 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
       <div className="content">{children}</div>
       <footer className="footer">
         <div className="footerWrapper">
-          <div className="siteInfo">Mari Ringsaker</div>
+          <div className="siteInfo">Art by Mari</div>
+          <ul class="menu">
+            <li>
+              <a href="mari-ringsaker">Om meg</a>
+            </li>
+            <li>
+              <a href="/galleri">Galleri</a>
+            </li>
+            <li>
+              <a href="#contact">Kontakt</a>
+            </li>
+          </ul>
         </div>
       </footer>
     </Wrapper>
