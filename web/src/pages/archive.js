@@ -7,8 +7,6 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers";
 
-import { responsiveTitle1 } from "../components/typography.module.css";
-
 export const query = graphql`
   query ArchivePageQuery {
     projects: allSanitySampleProject(
@@ -51,7 +49,7 @@ const ArchivePage = props => {
     <Layout>
       <SEO title="Archive" />
       <Container>
-        <h1 className={responsiveTitle1}>Projects</h1>
+        <h1>Projects</h1>
         {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />}
       </Container>
     </Layout>

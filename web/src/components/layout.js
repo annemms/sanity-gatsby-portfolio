@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "./header";
 import styled from "styled-components";
-
+import Instagram from "../components/icon/instagram";
 import "../styles/layout.css";
 
 const Wrapper = styled.div`
   height: fit-content;
   .content {
     background: var(--color-white);
-    min-height: calc(100% - 73px - 120px);
+    min-height: 100%;
 
     @media (--media-min-small) {
       min-height: calc(100% - 88px - 150px);
@@ -54,6 +54,15 @@ const Wrapper = styled.div`
     color: white;
     font-size: 20px;
   }
+
+  .icons {
+    fill: #fff;
+    padding-left: 40px;
+  }
+
+  .letter {
+    width: 20px;
+  }
 `;
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
@@ -75,6 +84,9 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
               <a href="#contact">Kontakt</a>
             </li>
           </ul>
+          <div class="icons">
+            <Instagram />
+          </div>
         </div>
       </footer>
     </Wrapper>

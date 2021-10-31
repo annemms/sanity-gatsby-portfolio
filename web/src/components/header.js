@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   margin: 0;
-  background-color: #f4f4f4;
 
   a {
     color: #fff;
@@ -15,9 +14,6 @@ const Wrapper = styled.div`
   .header {
     background-color: #506473;
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    z-index: 3;
   }
 
   .header h1 {
@@ -128,6 +124,11 @@ const Wrapper = styled.div`
   /* 48em = 768px */
 
   @media (min-width: 48em) {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
     .header h1 {
       font-size: 26px;
     }
@@ -162,10 +163,10 @@ const Header = () => {
         </label>
         <ul class="menu">
           <li>
-            <a href="mari-ringsaker">Om meg</a>
+            <a href="/om-mari">Om Mari</a>
           </li>
           <li>
-            <a href="/galleri">Galleri</a>
+            <a href="/archive">Galleri</a>
           </li>
           <li>
             <a href="#contact">Kontakt</a>

@@ -173,7 +173,7 @@ const IndexPage = props => {
         <div className="line"></div>
         <ButtonWrapper>
           <button className="galleri">GALLERI</button>
-          <button className="omMeg">OM MEG</button>
+          <button className="omMeg">OM MARI</button>
         </ButtonWrapper>
       </ImageWrapper>
       <Container>
