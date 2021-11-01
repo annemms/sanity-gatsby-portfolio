@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./header";
 import styled from "styled-components";
 import Instagram from "../components/icon/instagram";
+import Letter from "../components/icon/lettericon";
 import "../styles/layout.css";
 
 const Wrapper = styled.div`
@@ -9,10 +10,6 @@ const Wrapper = styled.div`
   .content {
     background: var(--color-white);
     min-height: 100%;
-
-    @media (--media-min-small) {
-      min-height: calc(100% - 88px - 150px);
-    }
   }
 
   .footer {
@@ -22,6 +19,7 @@ const Wrapper = styled.div`
     }
     ul {
       list-style-type: none;
+      padding: 0;
       li {
         :hover {
           font-weight: bold;
@@ -31,7 +29,6 @@ const Wrapper = styled.div`
 
     .menu {
       margin: 0;
-      padding-bottom: 40px;
     }
   }
 
@@ -39,9 +36,15 @@ const Wrapper = styled.div`
     box-sizing: border-box;
     margin: 0 auto;
     background: #506473;
+    padding: 20px;
+    text-align: center;
 
-    @media (--media-min-small) {
-      padding: 6em 2em 2em;
+    @media (max-width: 600px) {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      padding: 20px;
+      text-align: left;
     }
   }
 
@@ -50,14 +53,15 @@ const Wrapper = styled.div`
   }
 
   .siteInfo {
-    padding: 40px 40px 12px;
     color: white;
     font-size: 20px;
   }
 
   .icons {
-    fill: #fff;
-    padding-left: 40px;
+    margin-top: 20px;
+    svg {
+      fill: #fff;
+    }
   }
 
   .letter {
@@ -72,20 +76,28 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
       <div className="content">{children}</div>
       <footer className="footer">
         <div className="footerWrapper">
-          <div className="siteInfo">Art by Mari</div>
-          <ul class="menu">
-            <li>
-              <a href="mari-ringsaker">Om meg</a>
-            </li>
-            <li>
-              <a href="/galleri">Galleri</a>
-            </li>
-            <li>
-              <a href="#contact">Kontakt</a>
-            </li>
-          </ul>
+          <div>
+            <div className="siteInfo">Art by Mari</div>
+            <ul class="menu">
+              <li>
+                <a href="mari-ringsaker">Om meg</a>
+              </li>
+              <li>
+                <a href="/galleri">Galleri</a>
+              </li>
+              <li>
+                <a href="#contact">Kontakt</a>
+              </li>
+            </ul>
+          </div>
+
           <div class="icons">
-            <Instagram />
+            <a href="https://www.instagram.com/art_by__mari/">
+              <Instagram />
+            </a>
+            <a style={{ paddingLeft: "10px" }} href="mailto:mari.ringsaker@gmail.com">
+              <Letter />
+            </a>
           </div>
         </div>
       </footer>

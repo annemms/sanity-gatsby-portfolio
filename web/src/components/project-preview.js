@@ -14,7 +14,7 @@ const Root = styled(Link)`
     font-size: 32px;
     margin: 0;
     padding: 18px;
-    color: #fff;
+    color: #506473;
     text-align: center;
   }
 `;
@@ -35,26 +35,29 @@ const LeadMediaThumb = styled.div`
 `;
 
 const Price = styled.div`
-  border: 4px solid white;
-  border-radius: 40px;
   width: 40%;
   margin: 0 auto;
   padding: 8px 10px;
-  margin-bottom: 32px;
+  margin-bottom: 105px;
+  background: #fff;
+  border-radius: 40px;
 
   h3 {
     margin: 0;
     font-size: 20px;
-    color: #fff;
+    color: #506473;
     font-weight: 600;
   }
   strong {
     font-weight: 600;
   }
   :hover {
-    background: #fff;
+    border: 4px solid white;
+    border-radius: 40px;
+    background: none;
+    padding: 6px 10px;
     h3 {
-      color: #506473;
+      color: #fff;
     }
   }
 `;
@@ -62,7 +65,6 @@ const Price = styled.div`
 const TextWrapper = styled.div`
   position: absolute;
   bottom: 0;
-  background: rgb(58 58 59 / 60%);
   width: 100%;
   text-align: center;
 `;
@@ -81,9 +83,8 @@ function ProjectPreview(props) {
           />
         )}
       </LeadMediaThumb>
-
+      <h3 className="title">{props.title}</h3>
       <TextWrapper>
-        <h3 className="title">{props.title}</h3>
         {props.price && (
           <Price>
             <h3>{props.price}</h3>

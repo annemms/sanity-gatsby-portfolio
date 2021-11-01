@@ -8,6 +8,10 @@ const Wrapper = styled.div`
   margin: 7em 4em;
   display: flex;
   align-items: center;
+  @media (max-width: 600px) {
+    display: block;
+    margin: 20px;
+  }
 
   h2 {
     color: #506473;
@@ -28,6 +32,11 @@ const Wrapper = styled.div`
 
   img {
     margin-right: 40px;
+    @media (max-width: 600px) {
+      width: 100%;
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
   }
 `;
 
