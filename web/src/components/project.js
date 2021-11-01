@@ -13,6 +13,7 @@ const Wrapper = styled.div`
 `;
 function Project(props) {
   const { _rawBody, title, mainImage, price, isSold, publishedAt, relatedProjects } = props;
+  console.log(props);
   return (
     <article className={styles.root}>
       {props.mainImage && mainImage.asset && (
@@ -58,7 +59,8 @@ function Project(props) {
                 </ul>
               </div>
             )}
-            <p>{price}</p>
+            <p className={styles.publishedAt}>{price}</p>
+            <p className={styles.publishedAt}>{props.format}</p>
           </aside>
         </div>
       </Wrapper>
