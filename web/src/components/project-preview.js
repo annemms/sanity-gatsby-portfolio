@@ -13,6 +13,7 @@ const Root = styled(Link)`
   .title {
     font-size: 32px;
     margin: 0;
+    margin-top: 12px;
     padding: 18px;
     color: #506473;
     text-align: center;
@@ -31,6 +32,13 @@ const LeadMediaThumb = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    box-shadow: 0;
+    transition: 0.7s;
+
+    :hover {
+      box-shadow: 10px 10px 5px #ccc;
+      transform: scale(1.1);
+    }
   }
 `;
 
