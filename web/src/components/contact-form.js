@@ -57,7 +57,7 @@ const SectionWrapper = styled.div`
 
 const ContactForm = () => (
   <FormWrapper>
-    <Form method="post" action="#" data-netlify="true">
+    <Form method="post" name="kontakt" netlify>
       <h2>Kontakt meg</h2>
       <SectionWrapper>
         <div>
