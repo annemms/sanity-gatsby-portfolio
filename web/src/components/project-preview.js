@@ -18,6 +18,16 @@ const Root = styled(Link)`
     color: #506473;
     text-align: center;
   }
+  .isSold {
+    position: absolute;
+    top: -4px;
+    left: -36px;
+    background: white;
+    padding: 10px 20px;
+    transform: rotate(-45deg);
+    width: 140px;
+    text-align: center;
+  }
 `;
 
 const LeadMediaThumb = styled.div`
@@ -91,6 +101,7 @@ function ProjectPreview(props) {
           />
         )}
       </LeadMediaThumb>
+      {props.isSold && props.archivePage && <p className="isSold">SOLGT</p>}
       <h3 className="title">{props.title}</h3>
       <TextWrapper>
         {props.price && (

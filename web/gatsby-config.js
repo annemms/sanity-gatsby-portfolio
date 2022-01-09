@@ -21,6 +21,12 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd && token
       }
+    },
+    {
+      resolve: "gatsby-source-instagram",
+      options: {
+        username: "46854398473"
+      }
     }
   ]
 };

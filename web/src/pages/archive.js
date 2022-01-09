@@ -25,6 +25,7 @@ export const query = graphql`
           }
           title
           price
+          isSold
           slug {
             current
           }
@@ -49,8 +50,10 @@ const ArchivePage = props => {
     <Layout>
       <SEO title="Archive" />
       <Container>
-        <h1>Projects</h1>
-        {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />}
+        <h1>Galleri</h1>
+        {projectNodes && projectNodes.length > 0 && (
+          <ProjectPreviewGrid nodes={projectNodes} archive />
+        )}
       </Container>
     </Layout>
   );

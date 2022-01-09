@@ -153,15 +153,15 @@ const Wrapper = styled.div`
 const Header = () => {
   return (
     <Wrapper>
-      <header class="header">
-        <a href="/" class="logo">
+      <header className="header">
+        <a href="/" className="logo">
           <h1>Art by Mari</h1>
         </a>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn">
-          <span class="navicon"></span>
+        <input className="menu-btn" type="checkbox" id="menu-btn" />
+        <label className="menu-icon" for="menu-btn">
+          <span className="navicon"></span>
         </label>
-        <ul class="menu">
+        <ul className="menu">
           <li>
             <a href="/om-mari">Om Mari</a>
           </li>

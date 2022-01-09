@@ -57,7 +57,7 @@ const SectionWrapper = styled.div`
 
 const ContactForm = () => (
   <FormWrapper>
-    <Form method="post" name="kontakt" netlify>
+    <Form method="post" name="kontakt" /* action="https://www.flexyform.com/f/YouFormKey" */>
       <h2>Kontakt meg</h2>
       <SectionWrapper>
         <div>

@@ -5,6 +5,7 @@ import ProjectPreview from "./project-preview";
 import * as styles from "./project-preview-grid.module.css";
 
 function ProjectPreviewGrid(props) {
+  const archivePage = props.archive;
   return (
     <div className={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
@@ -12,7 +13,7 @@ function ProjectPreviewGrid(props) {
         {props.nodes &&
           props.nodes.map(node => (
             <li key={node.id}>
-              <ProjectPreview {...node} />
+              <ProjectPreview {...node} archivePage={archivePage} />
             </li>
           ))}
       </ul>

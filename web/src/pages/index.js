@@ -10,9 +10,6 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import ProjectPreviewGrid from "../components/project-preview-grid";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import coverphoto from "../components/static/header.jpg";
-import painting from "../components/static/bilde.png";
-
 import styled from "styled-components";
 import ContactForm from "../components/contact-form";
 
@@ -55,6 +52,7 @@ export const query = graphql`
           }
           title
           price
+          isSold
           slug {
             current
           }
@@ -64,78 +62,17 @@ export const query = graphql`
   }
 `;
 
-const ImageWrapper = styled.div`
-  position: relative;
-  .coverphoto {
-    width: 100%;
-    max-height: 800px;
-    object-fit: fill;
-  }
-
-  .painting {
-    position: absolute;
-    z-index: 10;
-    width: 271px;
-    top: 27%;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    box-shadow: 10px 10px 5px #9c9c9c;
-    @media (max-width: 600px) {
-      width: 67px;
-      box-shadow: 5px 5px 5px #9c9c9c;
-    }
-  }
-  h2 {
+const HeaderWrapper = styled.div`
+  h1 {
     color: #506473;
-    position: absolute;
-    top: 60%;
-    right: 0;
-    left: 0;
+    margin-top: 100px;
     text-align: center;
-    font-size: 100px;
+    font-size: 48px;
     span {
       font-weight: 300;
     }
     @media (max-width: 600px) {
       font-size: 32px;
-    }
-  }
-`;
-
-const ButtonWrapper = styled.div`
-  position: absolute;
-  top: 80%;
-  display: flex;
-  left: 0;
-  max-width: 655px;
-  right: 0;
-  margin: 0 auto;
-
-  @media (max-width: 600px) {
-    top: unset;
-  }
-
-  button {
-    border: none;
-    border-radius: 40px;
-    width: 220px;
-    font-size: 28px;
-    margin: 20px auto;
-    padding: 8px 10px;
-    background: #506473;
-    color: #fff;
-    display: block;
-
-    @media (max-width: 600px) {
-      border: 2px solid #506473;
-      font-size: 18px;
-      width: 150px;
-    }
-
-    :hover {
-      background: #fff;
-      color: #506473;
     }
   }
 `;
@@ -164,28 +101,33 @@ const IndexPage = props => {
     );
   }
 
+  const filteredProjectNodes = projectNodes.filter(item => !item.isSold);
+
   return (
-    <Layout>
-      <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <ImageWrapper>
-        <img class="coverphoto" src={coverphoto} alt="coverphoto" />
-        <h2>
-          <span>Art by </span> Mari
-        </h2>
-        <ButtonWrapper>
-          <button className="galleri">GALLERI</button>
-          <button className="omMeg">OM MARI</button>
-        </ButtonWrapper>
-        <img class="painting" src={painting} alt="coverphoto" />
-      </ImageWrapper>
-      <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
-        {projectNodes && (
-          <ProjectPreviewGrid title="Galleri" nodes={projectNodes} browseMoreHref="/archive/" />
-        )}
-      </Container>
-      <ContactForm />
-    </Layout>
+    <>
+      <Layout>
+        <SEO title={site.title} description={site.description} keywords={site.keywords} />
+        <HeaderWrapper>
+          <h1>
+            <span>Art by </span> Mari
+          </h1>
+        </HeaderWrapper>
+        <Container>
+          <h2 className="infoText">
+            Velkommen. Her finner du malerier inspirert av det jeg ser og opplever. Ta en titt i
+            galleriet og fyll ut kontaktskjemaet dersom det er noe du ønsker å bestille
+          </h2>
+          {projectNodes && (
+            <ProjectPreviewGrid
+              title="Til salgs"
+              nodes={filteredProjectNodes}
+              browseMoreHref="/archive/"
+            />
+          )}
+        </Container>
+        <ContactForm />
+      </Layout>
+    </>
   );
 };
 

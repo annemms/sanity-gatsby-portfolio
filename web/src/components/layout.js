@@ -78,7 +78,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
         <div className="footerWrapper">
           <div>
             <div className="siteInfo">Art by Mari</div>
-            <ul class="menu">
+            <ul className="menu">
               <li>
                 <a href="mari-ringsaker">Om meg</a>
               </li>
@@ -91,7 +91,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
             </ul>
           </div>
 
-          <div class="icons">
+          <div className="icons">
             <a href="https://www.instagram.com/art_by__mari/">
               <Instagram />
             </a>
