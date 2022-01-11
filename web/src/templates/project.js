@@ -40,6 +40,27 @@ export const query = graphql`
         }
         alt
       }
+      imagesGallery {
+        crop {
+          _key
+          _type
+          top
+          bottom
+          left
+          right
+        }
+        hotspot {
+          _key
+          _type
+          x
+          y
+          height
+          width
+        }
+        asset {
+          _id
+        }
+      }
       title
       price
       isSold
@@ -53,6 +74,7 @@ export const query = graphql`
 `;
 
 const ProjectTemplate = props => {
+  console.log(props);
   const { data, errors } = props;
   const project = data && data.sampleProject;
   return (
