@@ -3,6 +3,7 @@ import Header from "./header";
 import styled from "styled-components";
 import Instagram from "../components/icon/instagram";
 import Letter from "../components/icon/lettericon";
+
 import "../styles/layout.css";
 
 const Wrapper = styled.div`

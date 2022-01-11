@@ -12,6 +12,7 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import styled from "styled-components";
 import ContactForm from "../components/contact-form";
+import CoverPhoto from "../components/static/coverphotonew.jpg";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -63,17 +64,19 @@ export const query = graphql`
 `;
 
 const HeaderWrapper = styled.div`
-  h1 {
-    color: #506473;
-    margin-top: 100px;
-    text-align: center;
-    font-size: 48px;
-    span {
-      font-weight: 300;
-    }
-    @media (max-width: 600px) {
-      font-size: 32px;
-    }
+  .coverImage {
+    max-width: 100vw;
+  }
+`;
+
+const H1 = styled.h1`
+  color: #506473;
+  margin-top: 100px;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  @media (max-width: 600px) {
+    font-size: 32px;
   }
 `;
 
@@ -108,18 +111,17 @@ const IndexPage = props => {
       <Layout>
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
         <HeaderWrapper>
-          <h1>
-            <span>Art by </span> Mari
-          </h1>
+          <img className="coverImage" src={CoverPhoto} />
         </HeaderWrapper>
         <Container>
+          <H1>Art by Mari</H1>
           <h2 className="infoText">
             Velkommen. Her finner du malerier inspirert av det jeg ser og opplever. Ta en titt i
             galleriet og fyll ut kontaktskjemaet dersom det er noe du ønsker å bestille
           </h2>
           {projectNodes && (
             <ProjectPreviewGrid
-              title="Til salgs"
+              title="TIL SALGS"
               nodes={filteredProjectNodes}
               browseMoreHref="/archive/"
             />

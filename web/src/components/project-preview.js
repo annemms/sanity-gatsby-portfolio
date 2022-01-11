@@ -21,11 +21,11 @@ const Root = styled(Link)`
   .isSold {
     position: absolute;
     top: -4px;
-    left: -36px;
+    left: -65px;
     background: white;
     padding: 10px 20px;
     transform: rotate(-45deg);
-    width: 140px;
+    width: 210px;
     text-align: center;
   }
 `;
