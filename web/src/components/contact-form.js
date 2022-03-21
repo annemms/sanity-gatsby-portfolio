@@ -59,7 +59,6 @@ const ContactForm = () => (
   <FormWrapper>
     <Form
       method="post"
-      name="kontakt"
       action="https://www.flexyform.com/f/775f49998b81280972c5397758219bb463534882"
     >
       <h2>Kontakt meg</h2>

@@ -19,6 +19,10 @@ const Carousel = styled.div`
   margin-top: 200px;
   margin-bottom: 150px;
   position: relative;
+  @media (max-width: 48em) {
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
   .embla {
     overflow: hidden;
   }
@@ -57,6 +61,9 @@ const Carousel = styled.div`
     width: 100%;
     height: 100%;
     fill: #506473;
+    @media (max-width: 48em) {
+      fill: #fff;
+    }
   }
 
   .embla__button--prev {
@@ -70,6 +77,9 @@ const Carousel = styled.div`
   img {
     height: 500px;
     width: auto;
+    @media (max-width: 48em) {
+      height: 200px;
+    }
   }
 `;
 
