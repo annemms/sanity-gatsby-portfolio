@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 
   .header li a {
     display: block;
-    padding: 33px 30px;
+    padding: 10px 20px;
     text-decoration: none;
   }
 
@@ -53,6 +53,10 @@ const Wrapper = styled.div`
     clear: both;
     max-height: 0;
     transition: max-height 0.2s ease-out;
+  }
+
+  .header .menu li:last-child {
+    padding-bottom: 40px;
   }
 
   /* menu icon */
@@ -146,6 +150,9 @@ const Wrapper = styled.div`
     }
     .header .menu-icon {
       display: none;
+    }
+    .header .menu li:last-child {
+      padding-bottom: 0;
     }
   }
 `;

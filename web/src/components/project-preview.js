@@ -56,7 +56,7 @@ const Price = styled.div`
   width: 40%;
   margin: 0 auto;
   padding: 8px 10px;
-  margin-bottom: 105px;
+  margin-bottom: 130px;
   background: #fff;
   border-radius: 40px;
 
