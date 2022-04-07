@@ -7,7 +7,10 @@ import Letter from "../components/icon/lettericon";
 import "../styles/layout.css";
 
 const Wrapper = styled.div`
-  height: fit-content;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
   .content {
     background: var(--color-white);
     min-height: 100%;

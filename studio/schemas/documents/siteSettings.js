@@ -12,23 +12,23 @@ export default {
     {
       name: "title",
       type: "string",
-      title: "Title"
+      title: "Tittel på forside"
     },
     {
       name: "description",
       type: "text",
-      title: "Description",
+      title: "Tekst til forside",
       description: "Describe your portfolio for search engines and social media."
     },
     {
       name: "image",
-      title: "Coverbilde",
+      title: "Coverbilde til forsiden",
       type: "figure"
     },
     {
       name: "keywords",
       type: "array",
-      title: "Keywords",
+      title: "Nøkkelord",
       description: "Add keywords that describes your portfolio.",
       of: [{ type: "string" }],
       options: {
@@ -36,11 +36,16 @@ export default {
       }
     },
     {
-      name: "author",
-      type: "reference",
-      description: "Publish an author and set a reference to them here.",
-      title: "Author",
-      to: [{ type: "person" }]
+      name: "portraitImage",
+      description: "Portrettbilde til siden om Mari",
+      title: "Portrettbilde",
+      type: "figure"
+    },
+    {
+      name: "bio",
+      description: "Biografi til siden om Mari",
+      title: "Biografi",
+      type: "bioPortableText"
     }
   ]
 };

@@ -56,7 +56,7 @@ const SectionWrapper = styled.div`
 `;
 
 const ContactForm = () => (
-  <FormWrapper>
+  <FormWrapper id="contact">
     <Form
       method="post"
       action="https://www.flexyform.com/f/775f49998b81280972c5397758219bb463534882"

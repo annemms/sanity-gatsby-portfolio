@@ -61,9 +61,6 @@ const Carousel = styled.div`
     width: 100%;
     height: 100%;
     fill: #506473;
-    @media (max-width: 48em) {
-      fill: #fff;
-    }
   }
 
   .embla__button--prev {
@@ -146,13 +143,7 @@ function Project(props) {
             <div className="embla__container">
               {imagesGallery.map(gallery => (
                 <div className="embla__slide mainImage" key={gallery}>
-                  <img
-                    src={imageUrlFor(buildImageObj(gallery))
-                      .width(1200)
-                      .height(Math.floor((9 / 16) * 1200))
-                      .fit("crop")
-                      .url()}
-                  />
+                  <img src={imageUrlFor(buildImageObj(gallery)).url()} />
                 </div>
               ))}
             </div>

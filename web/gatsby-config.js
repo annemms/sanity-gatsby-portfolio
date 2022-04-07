@@ -13,6 +13,7 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-image`,
     {
       resolve: "gatsby-source-sanity",
       options: {
@@ -20,12 +21,6 @@ module.exports = {
         token,
         watchMode: !isProd,
         overlayDrafts: !isProd && token
-      }
-    },
-    {
-      resolve: "gatsby-source-instagram",
-      options: {
-        username: "46854398473"
       }
     }
   ]

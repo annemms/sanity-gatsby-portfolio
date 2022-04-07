@@ -1,6 +1,6 @@
 export default {
   name: "figure",
-  title: "Image",
+  title: "Bilde",
   type: "image",
   options: {
     hotspot: true
@@ -11,7 +11,7 @@ export default {
       type: "string",
       title: "Alternative text",
       validation: Rule => Rule.error("You have to fill out the alternative text.").required(),
-      description: "Important for SEO and accessiblity.",
+      description: "Tekst som forklarer bilde (viktig for SEO)",
       options: {
         isHighlighted: true
       }

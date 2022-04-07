@@ -8,7 +8,7 @@ export default {
   fields: [
     {
       name: "title",
-      title: "Title",
+      title: "Tittel",
       type: "string"
     },
     {
@@ -38,7 +38,7 @@ export default {
     },
     {
       name: "mainImage",
-      title: "Main image",
+      title: "Hovedbilde",
       type: "figure"
     },
     {
@@ -59,7 +59,7 @@ export default {
     },
     {
       name: "relatedProjects",
-      title: "Related malerier",
+      title: "Relaterte malerier",
       type: "array",
       of: [{ type: "reference", to: { type: "sampleProject" } }]
     }

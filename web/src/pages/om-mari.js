@@ -49,7 +49,7 @@ const OmMari = () => {
         </div>
         <div>
           <h2>
-            <span>Mari</span> Ringsaker
+            Mari <span>Ringsaker</span>
           </h2>
           <div className="line"></div>
           <p>

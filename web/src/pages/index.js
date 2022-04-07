@@ -12,7 +12,8 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import styled from "styled-components";
 import ContactForm from "../components/contact-form";
-import CoverPhoto from "../components/static/coverphotonew.jpg";
+import { buildImageObj } from "../lib/helpers";
+import { imageUrlFor } from "../lib/image-url";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -20,6 +21,28 @@ export const query = graphql`
       title
       description
       keywords
+      image {
+        crop {
+          _key
+          _type
+          top
+          bottom
+          left
+          right
+        }
+        hotspot {
+          _key
+          _type
+          x
+          y
+          height
+          width
+        }
+        asset {
+          _id
+        }
+        alt
+      }
     }
     projects: allSanitySampleProject(
       limit: 6
@@ -64,8 +87,8 @@ export const query = graphql`
 `;
 
 const HeaderWrapper = styled.div`
-  .coverImage {
-    max-width: 100vw;
+  img {
+    width: 100vw;
   }
 `;
 
@@ -105,13 +128,18 @@ const IndexPage = props => {
   }
 
   const filteredProjectNodes = projectNodes.filter(item => !item.isSold);
-
   return (
     <>
       <Layout>
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
         <HeaderWrapper>
-          <img className="coverImage" src={CoverPhoto} />
+          <img
+            src={imageUrlFor(buildImageObj(site.image))
+              .height(Math.floor((9 / 16) * 1200))
+              .fit("crop")
+              .url()}
+            alt={site.image.alt}
+          />
         </HeaderWrapper>
         <Container>
           <H1>Art by Mari</H1>
