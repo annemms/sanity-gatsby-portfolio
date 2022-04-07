@@ -143,10 +143,7 @@ const IndexPage = props => {
         </HeaderWrapper>
         <Container>
           <H1>Art by Mari</H1>
-          <h2 className="infoText">
-            Velkommen. Her finner du malerier inspirert av det jeg ser og opplever. Ta en titt i
-            galleriet og fyll ut kontaktskjemaet dersom det er noe du ønsker å bestille
-          </h2>
+          <h2 className="infoText">{site.description}</h2>
           {projectNodes && (
             <ProjectPreviewGrid
               title="TIL SALGS"

@@ -134,7 +134,6 @@ function Project(props) {
     embla.on("select", onSelect);
   }, [embla, setScrollSnaps, onSelect]);
 
-  console.log(imagesGallery);
   return (
     <article className={styles.root}>
       <Carousel>
@@ -152,18 +151,6 @@ function Project(props) {
         <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
         <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
       </Carousel>
-      {/*       {props.mainImage && mainImage.asset && (
-        <div className={styles.mainImage}>
-          <img
-            src={imageUrlFor(buildImageObj(mainImage))
-              .width(1200)
-              .height(Math.floor((9 / 16) * 1200))
-              .fit("crop")
-              .url()}
-            alt={mainImage.alt}
-          />
-        </div>
-      )} */}
       <Wrapper>
         <div className={styles.grid}>
           <div className={styles.mainContent}>

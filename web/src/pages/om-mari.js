@@ -1,13 +1,57 @@
-import { Link } from "gatsby";
+import { graphql } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import Layout from "../containers/layout";
-import Portrait from "../components/static/mari.jpg";
+import { buildImageObj } from "../lib/helpers";
+import { imageUrlFor } from "../lib/image-url";
+import BlockText from "../components/block-text";
+import ContactForm from "../components/contact-form";
+
+export const query = graphql`
+  query AboutPageQuery {
+    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+      bio {
+        _key
+        _type
+        style
+        list
+        children {
+          _key
+          _type
+          text
+        }
+      }
+      portraitImage {
+        crop {
+          _key
+          _type
+          top
+          bottom
+          left
+          right
+        }
+        hotspot {
+          _key
+          _type
+          x
+          y
+          height
+          width
+        }
+        asset {
+          _id
+        }
+        alt
+      }
+    }
+  }
+`;
 
 const Wrapper = styled.div`
   margin: 7em 4em;
   display: flex;
   align-items: center;
+  justify-content: center;
   @media (max-width: 600px) {
     display: block;
     margin: 20px;
@@ -30,6 +74,10 @@ const Wrapper = styled.div`
     width: 100%;
   }
 
+  .bio {
+    max-width: 800px;
+  }
+
   img {
     margin-right: 40px;
     @media (max-width: 600px) {
@@ -40,32 +88,42 @@ const Wrapper = styled.div`
   }
 `;
 
-const OmMari = () => {
+const OmMari = props => {
+  const { data, errors } = props;
+
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    );
+  }
+
+  const site = (data || {}).site;
+
+  console.log(site);
+
   return (
     <Layout>
       <Wrapper>
         <div>
-          <img src={Portrait} alt="portrait" />
+          <img
+            src={imageUrlFor(buildImageObj(site.portraitImage))
+              .height(Math.floor((9 / 16) * 1000))
+              .fit("crop")
+              .url()}
+            alt=""
+          />
         </div>
-        <div>
+        <div className="bio">
           <h2>
             Mari <span>Ringsaker</span>
           </h2>
           <div className="line"></div>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            has been the industry's standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it to make a type specimen book. It has
-            survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
-          </p>
-          <p>
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-            Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-            including versions of Lorem Ipsum.
-          </p>
+          <BlockText blocks={site.bio} />
         </div>
       </Wrapper>
+      <ContactForm />
     </Layout>
   );
 };

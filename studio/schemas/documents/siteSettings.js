@@ -45,7 +45,7 @@ export default {
       name: "bio",
       description: "Biografi til siden om Mari",
       title: "Biografi",
-      type: "bioPortableText"
+      type: "projectPortableText"
     }
   ]
 };
