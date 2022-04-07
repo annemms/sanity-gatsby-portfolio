@@ -101,8 +101,6 @@ const OmMari = props => {
 
   const site = (data || {}).site;
 
-  console.log(site);
-
   return (
     <Layout>
       <Wrapper>

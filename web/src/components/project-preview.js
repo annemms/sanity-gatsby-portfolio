@@ -47,7 +47,7 @@ const LeadMediaThumb = styled.div`
 
     :hover {
       box-shadow: 10px 10px 5px #ccc;
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
   }
 `;

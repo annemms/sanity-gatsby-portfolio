@@ -6,6 +6,7 @@ html {
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 *,
 *:before,
