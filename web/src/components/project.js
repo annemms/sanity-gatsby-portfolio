@@ -72,10 +72,10 @@ const Carousel = styled.div`
   }
 
   img {
-    height: 500px;
+    height: 550px;
     width: auto;
     @media (max-width: 48em) {
-      height: 200px;
+      height: 345px;
     }
   }
 `;
