@@ -32,7 +32,7 @@ const Root = styled(Link)`
 
 const LeadMediaThumb = styled.div`
   position: relative;
-  padding-bottom: 66.666%;
+  padding-bottom: 83.666%;
   background: #eee;
   img {
     position: absolute;
