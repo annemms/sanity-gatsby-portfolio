@@ -1,18 +1,5 @@
-import React, { useRef } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-
-const schema = yup.object().shape({
-  firstname: yup.string().required(),
-  lastname: yup.string().required(),
-  email: yup
-    .string()
-    .email()
-    .required(),
-  message: yup.string().required()
-});
 
 const FormWrapper = styled.div`
   background: #7990a1;
@@ -73,46 +60,9 @@ const SectionWrapper = styled.div`
 `;
 
 const ContactForm = () => {
-  const {
-    register,
-    trigger,
-    handleSubmit,
-    formState: { errors },
-    reset
-  } = useForm({
-    resolver: yupResolver(schema)
-  });
-
-  const $form = useRef(null);
-
-  const onSubmitHandler = async (data, e) => {
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    };
-
-    const response = await fetch(
-      "https://www.flexyform.com/f/775f49998b81280972c5397758219bb463534882",
-      requestOptions
-    );
-    const jsonData = await response.json();
-
-    console.log({ jsonData, data });
-
-    /*
-
-
-    console.log({ data, form });
-    setTimeout(() => {
-      reset();
-    }, 1000);
-    */
-  };
   return (
-    <FormWrapper id="contact" ref={$form}>
+    <FormWrapper id="contact">
       <Form
-        onSubmit={handleSubmit(onSubmitHandler)}
         method="post"
         action="https://www.flexyform.com/f/775f49998b81280972c5397758219bb463534882"
       >
@@ -121,39 +71,35 @@ const ContactForm = () => {
           <div>
             <label>
               <p>Fornavn</p>
-              <input {...register("firstname")} type="firstname" name="firstname" id="firstname" />
+              <input type="firstname" name="firstname" id="firstname" required />
             </label>
-            <p>{errors.firstname?.message}</p>
           </div>
           <div>
             <label>
               <p>Etternavn</p>
-              <input {...register("lastname")} type="lastname" name="lastname" id="lastname" />
+              <input type="lastname" name="lastname" id="lastname" required />
             </label>
-            <p>{errors.lastname?.message}</p>
           </div>
         </SectionWrapper>
         <SectionWrapper>
           <div>
             <label>
               <p>E-post</p>
-              <input {...register("email")} type="email" name="email" id="email" />
+              <input type="email" name="email" id="email" required />
             </label>
-            <p>{errors.email?.message}</p>
           </div>
           <div>
             <label>
               <p>Telefon</p>
-              <input {...register("phone")} type="phone" name="phone" id="phone" />
+              <input type="phone" name="phone" id="phone" />
             </label>
           </div>
         </SectionWrapper>
         <div>
           <label>
             <p>Melding</p>
-            <textarea {...register("message")} name="message" id="message" rows="5" />
+            <textarea name="message" id="message" rows="5" required />
           </label>
-          <p>{errors.message?.message}</p>
         </div>
         <button type="submit">Send</button>
       </Form>
