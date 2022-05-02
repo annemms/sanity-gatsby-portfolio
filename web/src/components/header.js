@@ -14,6 +14,9 @@ const Wrapper = styled.div`
   .header {
     background-color: #506473;
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
   }
 
   .header h1 {
@@ -36,7 +39,7 @@ const Wrapper = styled.div`
 
   .header li a:hover,
   .header .menu-btn:hover {
-    font-weight: bold;
+    text-decoration: underline;
   }
 
   .header .logo {

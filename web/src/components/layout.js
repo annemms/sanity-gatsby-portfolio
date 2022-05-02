@@ -26,7 +26,7 @@ const Wrapper = styled.div`
       padding: 0;
       li {
         :hover {
-          font-weight: bold;
+          text-decoration: underline;
         }
       }
     }

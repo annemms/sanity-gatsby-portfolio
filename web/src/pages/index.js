@@ -89,6 +89,8 @@ export const query = graphql`
 const HeaderWrapper = styled.div`
   img {
     width: 100vw;
+    height: 60vh;
+    object-fit: cover;
   }
 `;
 
