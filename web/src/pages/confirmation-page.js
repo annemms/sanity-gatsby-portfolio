@@ -23,7 +23,7 @@ const ConfirmationPage = () => {
     <Layout>
       <Wrapper>
         <div>
-          <h2>Takk for din epost!</h2>
+          <h2>Takk for din henvendelse!</h2>
         </div>
       </Wrapper>
     </Layout>
