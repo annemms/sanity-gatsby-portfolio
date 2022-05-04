@@ -14,6 +14,10 @@ const Wrapper = styled.div`
   .content {
     background: var(--color-white);
     min-height: 100%;
+    padding-top: 80px;
+    @media (max-width: 600px) {
+      padding-top: 50px;
+    }
   }
 
   .footer {

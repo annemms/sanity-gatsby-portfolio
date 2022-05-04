@@ -51,7 +51,7 @@ const ArchivePage = props => {
     <Layout>
       <SEO title="Archive" />
       <Container>
-        <h1>Galleri</h1>
+        <h1 style={{ color: "#506473", marginLeft: "4rem" }}>Galleri</h1>
         {projectNodes && projectNodes.length > 0 && (
           <ProjectPreviewGrid nodes={projectNodes} archive />
         )}

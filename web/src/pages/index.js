@@ -87,9 +87,14 @@ export const query = graphql`
 `;
 
 const HeaderWrapper = styled.div`
+  position: relative;
+  padding-top: 80%;
   img {
-    width: 100vw;
-    height: 60vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 `;
@@ -102,6 +107,7 @@ const H1 = styled.h1`
   font-weight: 600;
   @media (max-width: 600px) {
     font-size: 32px;
+    margin-top: 50px;
   }
 `;
 
@@ -135,13 +141,7 @@ const IndexPage = props => {
       <Layout>
         <SEO title={site.title} description={site.description} keywords={site.keywords} />
         <HeaderWrapper>
-          <img
-            src={imageUrlFor(buildImageObj(site.image))
-              .height(Math.floor((9 / 16) * 1200))
-              .fit("crop")
-              .url()}
-            alt={site.image.alt}
-          />
+          <img src={imageUrlFor(buildImageObj(site.image)).url()} alt={site.image.alt} />
         </HeaderWrapper>
         <Container>
           <H1>Art by Mari</H1>
