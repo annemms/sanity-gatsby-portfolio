@@ -13,6 +13,14 @@ const Wrapper = styled.div`
     padding-top: 20px;
   }
 
+  h1 {
+    color: #506473;
+    margin-left: 4rem;
+    @media (max-width: 600px) {
+      margin-left: unset;
+    }
+  }
+
   .infoText {
     text-align: center;
     color: #849bac;

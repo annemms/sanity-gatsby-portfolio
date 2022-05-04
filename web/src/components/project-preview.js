@@ -9,6 +9,7 @@ const Root = styled(Link)`
   position: relative;
   display: block;
   color: inherit;
+  overflow: hidden;
   text-decoration: none;
   .title {
     font-size: 32px;
@@ -17,6 +18,9 @@ const Root = styled(Link)`
     padding: 18px;
     color: #506473;
     text-align: center;
+    @media (max-width: 600px) {
+      font-size: 22px;
+    }
   }
   .isSold {
     position: absolute;
@@ -27,6 +31,9 @@ const Root = styled(Link)`
     transform: rotate(-45deg);
     width: 210px;
     text-align: center;
+    @media (max-width: 600px) {
+      top: 12px;
+    }
   }
 `;
 
@@ -34,6 +41,8 @@ const LeadMediaThumb = styled.div`
   position: relative;
   padding-bottom: 83.666%;
   background: #eee;
+  display: block;
+  transition: transform 0.4s;
   img {
     position: absolute;
     top: 0;
@@ -45,7 +54,6 @@ const LeadMediaThumb = styled.div`
     transition: 0.7s;
 
     :hover {
-      box-shadow: 10px 10px 5px #ccc;
       transform: scale(1.05);
     }
   }
