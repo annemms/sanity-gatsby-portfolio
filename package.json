@@ -19,7 +19,8 @@
   "dependencies": {
     "@sanity/cli": "^2.21.4",
     "babel-plugin-styled-components": "^1.13.3",
-    "gatsby-plugin-styled-components": "^4.14.0",
+    "gatsby-plugin-manifest": "^4.13.0",
+    "gatsby-plugin-styled-components": "^5.13.0",
     "styled-components": "^5.3.1"
   }
 }

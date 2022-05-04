@@ -88,7 +88,7 @@ export const query = graphql`
 
 const HeaderWrapper = styled.div`
   position: relative;
-  padding-top: 80%;
+  padding-top: 75%;
   img {
     position: absolute;
     top: 0;

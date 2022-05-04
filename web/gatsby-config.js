@@ -22,6 +22,12 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd && token
       }
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "./assets/favicon.png"
+      }
     }
   ]
 };
