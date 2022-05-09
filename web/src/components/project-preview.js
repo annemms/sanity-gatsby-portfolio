@@ -1,8 +1,8 @@
 import { Link } from "gatsby";
 import React from "react";
-import { cn, buildImageObj } from "../lib/helpers";
+import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
-import BlockText from "./block-text";
+
 import styled from "styled-components";
 
 const Root = styled(Link)`
@@ -39,7 +39,7 @@ const Root = styled(Link)`
 
 const LeadMediaThumb = styled.div`
   position: relative;
-  padding-bottom: 83.666%;
+  padding-bottom: 115%;
   background: #eee;
   display: block;
   transition: transform 0.4s;
@@ -101,8 +101,8 @@ function ProjectPreview(props) {
         {props.mainImage && props.mainImage.asset && (
           <img
             src={imageUrlFor(buildImageObj(props.mainImage))
-              .width(600)
-              .height(Math.floor((9 / 16) * 900))
+              .width(800)
+              .height(Math.floor((9 / 16) * 1800))
               .url()}
             alt={props.mainImage.alt}
           />

@@ -76,6 +76,8 @@ const Carousel = styled.div`
     width: auto;
     @media (max-width: 48em) {
       height: 345px;
+      width: 70%;
+      object-fit: contain;
     }
   }
 `;
