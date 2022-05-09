@@ -126,24 +126,27 @@ function Project(props) {
     setScrollSnaps(embla.scrollSnapList());
     embla.on("select", onSelect);
   }, [embla, setScrollSnaps, onSelect]);
-
+  console.log(imagesGallery);
   return (
     <article className={styles.root}>
-      <Carousel>
-        <div className="embla" ref={emblaRef}>
-          <div className="embla__viewport" ref={viewportRef}>
-            <div className="embla__container">
-              {imagesGallery.map(gallery => (
-                <div className="embla__slide mainImage" key={gallery}>
-                  <img src={imageUrlFor(buildImageObj(gallery)).url()} />
-                </div>
-              ))}
+      {imagesGallery && imagesGallery.length > 0 && (
+        <Carousel>
+          <div className="embla" ref={emblaRef}>
+            <div className="embla__viewport" ref={viewportRef}>
+              <div className="embla__container">
+                {imagesGallery.map(gallery => (
+                  <div className="embla__slide mainImage" key={gallery}>
+                    <img src={imageUrlFor(buildImageObj(gallery)).url()} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-        <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-        <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
-      </Carousel>
+          <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+          <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+        </Carousel>
+      )}
+
       <Wrapper>
         <div className={styles.grid}>
           <div className={styles.mainContent}>
