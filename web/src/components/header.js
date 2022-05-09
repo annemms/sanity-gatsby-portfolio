@@ -168,10 +168,13 @@ const Header = () => {
           <h1>Art by Mari</h1>
         </a>
         <input className="menu-btn" type="checkbox" id="menu-btn" />
-        <label className="menu-icon" for="menu-btn">
+        <label className="menu-icon" htmlFor="menu-btn">
           <span className="navicon"></span>
         </label>
         <ul className="menu">
+          <li>
+            <a href="/galleri/Bestillingsverk">Bestillingsverk</a>
+          </li>
           <li>
             <a href="/om-mari">Om Mari</a>
           </li>

@@ -88,6 +88,9 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => {
             <div className="siteInfo">Art by Mari</div>
             <ul className="menu">
               <li>
+                <a href="/galleri/Bestillingsverk">Bestillingsverk</a>
+              </li>
+              <li>
                 <a href="/om-mari">Om meg</a>
               </li>
               <li>

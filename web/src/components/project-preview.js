@@ -96,7 +96,7 @@ const TextWrapper = styled.div`
 
 function ProjectPreview(props) {
   return (
-    <Root to={`/project/${props.slug.current}`}>
+    <Root to={`/galleri/${props.slug.current}`}>
       <LeadMediaThumb>
         {props.mainImage && props.mainImage.asset && (
           <img

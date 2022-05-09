@@ -74,7 +74,6 @@ export const query = graphql`
 `;
 
 const ProjectTemplate = props => {
-  console.log(props);
   const { data, errors } = props;
   const project = data && data.sampleProject;
   return (

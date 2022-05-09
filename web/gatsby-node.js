@@ -34,7 +34,7 @@ async function createProjectPages(graphql, actions) {
     .forEach(edge => {
       const id = edge.node.id;
       const slug = edge.node.slug.current;
-      const path = `/project/${slug}/`;
+      const path = `/galleri/${slug}/`;
 
       createPage({
         path,
