@@ -11,7 +11,6 @@ import ContactForm from "../components/contact-form";
 export const query = graphql`
   query ArchivePageQuery {
     projects: allSanitySampleProject(
-      limit: 12
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
@@ -47,6 +46,7 @@ const ArchivePage = props => {
   }
   const projectNodes =
     data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs);
+
   return (
     <Layout>
       <SEO title="Archive" />

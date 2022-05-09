@@ -83,16 +83,7 @@ const Carousel = styled.div`
 `;
 
 function Project(props) {
-  const {
-    _rawBody,
-    title,
-    mainImage,
-    price,
-    isSold,
-    publishedAt,
-    relatedProjects,
-    imagesGallery
-  } = props;
+  const { _rawBody, title, price, publishedAt, relatedProjects, imagesGallery } = props;
 
   const [emblaRef] = useEmblaCarousel();
 

@@ -45,7 +45,6 @@ export const query = graphql`
       }
     }
     projects: allSanitySampleProject(
-      limit: 6
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {

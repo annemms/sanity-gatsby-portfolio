@@ -6,6 +6,7 @@ import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import BlockText from "../components/block-text";
 import ContactForm from "../components/contact-form";
+import GraphQLErrorList from "../components/graphql-error-list";
 
 export const query = graphql`
   query AboutPageQuery {
