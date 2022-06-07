@@ -40,7 +40,7 @@ const Carousel = styled.div`
     background-color: transparent;
     touch-action: manipulation;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 50%;
     transform: translateY(-50%);
     border: 0;
