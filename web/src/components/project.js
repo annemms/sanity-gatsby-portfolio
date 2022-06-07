@@ -126,7 +126,7 @@ function Project(props) {
     setScrollSnaps(embla.scrollSnapList());
     embla.on("select", onSelect);
   }, [embla, setScrollSnaps, onSelect]);
-  console.log(imagesGallery);
+
   return (
     <article className={styles.root}>
       {imagesGallery && imagesGallery.length > 0 && (

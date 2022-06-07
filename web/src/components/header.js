@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { Link } from "gatsby";
 const Wrapper = styled.div`
   margin: 0;
 
@@ -172,7 +172,7 @@ const Header = () => {
         </label>
         <ul className="menu">
           <li>
-            <a href="/galleri/bestillingsverk">Bestillingsverk</a>
+            <Link to="/galleri/bestillingsverk">Bestillingsverk</Link>
           </li>
           <li>
             <a href="/om-mari">Om Mari</a>
