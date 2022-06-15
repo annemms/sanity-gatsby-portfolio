@@ -134,8 +134,8 @@ function Project(props) {
           <div className="embla" ref={emblaRef}>
             <div className="embla__viewport" ref={viewportRef}>
               <div className="embla__container">
-                {imagesGallery.map(gallery => (
-                  <div className="embla__slide mainImage" key={gallery}>
+                {imagesGallery.map((gallery, index) => (
+                  <div className="embla__slide mainImage" key={index}>
                     <img src={imageUrlFor(buildImageObj(gallery)).url()} />
                   </div>
                 ))}
